@@ -1,60 +1,25 @@
-# Title
-### Subtitle
-###### Smallest subtitle
+# C# SDET Sparta Global Course
+## Course Description
+This GitHub repository contains all the material covered in the C# SDET course from week 1 to 8. The details of the course content will be displayed in the sections below.
 
-## Text
+## Personal Information
+- **Name:** Jasser Bawi
+- **University Degree:** Chemical and Petroleum Engineering
 
-Hello 2.0, *Emphasised*, **Strong**
+## Course Overview
 
-_italics_, __Bold__, ___Bold and Italics___ or __*Bold and Italics*__
+<img src="https://customerspartaglobal--c.documentforce.com/sfc/dist/version/renditionDownload?rendition=SVGZ&versionId=0683Y00000KXyoA&operationContext=DELIVERY&contentId=05T3Y00001AA0hD&page=0&d=/a/3Y000000Qpog/jQdwqE_u2ThhydePVzcyNUzHKxjlqIb_9ldLM1ctStI&oid=00D1t000000wJJg&dpt=null&viewId=">
 
-_Italics and **Bold**_
 
-## Quotes
 
->Something Profound
->>The Great Philosopher Me
->>>More Quote
+## Weekly Course Topic	
 
-## Lists
-- This
-- Is a
-- Simple
-- List
+ - [ ] [**Week 1:**] Business Week -> Agile, GIT, PowerShell, MarkUp
+ - [ ] [**Week 2:**] 
+ - [ ] [**Week 3:**] 
+ - [ ] [**Week 4:**] 
+ - [ ] [**Week 5:**] 
+ - [ ] [**Week 6:**] 
+ - [ ] [**Week 7:**] 
+ - [ ] [**Week 8:**] 
 
-* More
-* List
-
-1. One
-2. Two
-3. Three
-12. Four
-
-## Images
-![Man]()
-
-<img src="" width="100" height="100">
-
-## Links
-
-[Markdown Cheatsheet](https://enterprise.github.com/downloads/en/markdown-cheatsheet.pdf)
-
-- [Title](#Title)
-- [Quotes](##Quotes)
-- [Images](##Images)
-
-## Github markdown
-
-`This a code snippet`
-```C#
-int i = 10 +c;
-```
-- [ ] Not Done.
-- [X] Done.
-
-***Name*** | ***Street*** | ***Job***
-|
-Tim | Legit  Lane | Coder
-John | Legit Road | Programmer
-Todd | Real house | Tamer
-Ben | Real lane | Driver
