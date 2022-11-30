@@ -14,12 +14,12 @@ This GitHub repository contains all the material covered in the C# SDET course f
 
 ## Weekly Course Topic	
 
- - [ ] [**Week 1:**] Business Week -> Agile, GIT, PowerShell, MarkUp
- - [ ] [**Week 2:**] 
- - [ ] [**Week 3:**] 
- - [ ] [**Week 4:**] 
- - [ ] [**Week 5:**] 
- - [ ] [**Week 6:**] 
- - [ ] [**Week 7:**] 
- - [ ] [**Week 8:**] 
+ - [ ] [**Week 1:**](https://github.com/jasserbawi/Engineering134/tree/main/Week%201) Business Week -> Agile, GIT, PowerShell, MarkUp
+ - [ ] [**Week 2:**](https://github.com/jasserbawi/Engineering134/tree/main/Week%202) 
+ - [ ] [**Week 3:**](https://github.com/jasserbawi/Engineering134/tree/main/Week%203) 
+ - [ ] [**Week 4:**](https://github.com/jasserbawi/Engineering134/tree/main/Week%204) 
+ - [ ] [**Week 5:**](https://github.com/jasserbawi/Engineering134/tree/main/Week%205) 
+ - [ ] [**Week 6:**](https://github.com/jasserbawi/Engineering134/tree/main/Week%206) 
+ - [ ] [**Week 7:**](https://github.com/jasserbawi/Engineering134/tree/main/Week%207) 
+ - [ ] [**Week 8:**](https://github.com/jasserbawi/Engineering134/tree/main/Week%208) 
 
