@@ -1,44 +1,33 @@
-﻿echo "This is a hello world batch file `n"
+﻿echo "`nThis is a user name folder generator.`n"
 # Create a folder if it does not already exist
-if (Get-Item -Path FolderA -ErrorAction Ignore) {
+if (Get-Item -Path Names -ErrorAction Ignore) {
     echo "Main folder already exists `n"
-    cd FolderA
+    cd Names
 }
 else {
-    echo "Creating the main folder `n"
-    md FolderA
-    cd FolderA
+    echo "Creating the name folder. `n"
+    md Names
+    cd Names
 }
 
-# Create a file
-echo "Hello World" > testfile.txt
+$Name = Read-Host -Prompt 'Input your name: '
 
-# Append Content to the file
-echo "New Line" >> testfile.txt
-echo A B C D >> testfile.txt
-
-# Add content to the file - this overwrites the previous contents
-echo "Last line" >> testfile.txt
-
-# Display file contents
-echo "`nContent of the Text File after appending text: `n"
-cat testfile.txt
-
-if (Get-Item -Path SubFolder -ErrorAction Ignore) {
-    echo "`nSub Folder already exists in main folder `n"
+if (Get-Item -Path $Name -ErrorAction Ignore) {
+    echo "`nName already exists in main folder... `n"
+    cd $Name
 }
 else {
-    echo "`nCreating sub folder `n"
-    md SubFolder
+    echo "`nCreating $Name folder"
+    md $Name
+    cd .\$Name
 }
 
-# move to sub folder directory
-cd .\SubFolder
-echo "This is a text file in the sub folder" > introduction.txt
+echo ($Name)  > nameofuser.txt
+echo "`nName of user has been saved in a text file"
 
 # Displays sub folder text file content
-echo "`nContent of the Sub folder text file: `n"
-cat introduction.txt
+echo "`nContent of the  text file: `n"
+cat nameofuser.txt
 
 # move back to parent directory
 cd ../..
