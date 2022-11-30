@@ -31,9 +31,9 @@ _Italics and **Bold**_
 123123123. Four
 
 ## Images
-![Man](C:/Users/Jasser/Pictures/Jasser/Back.jpg)
+![Man]()
 
-<img src="C:/Users/Jasser/Pictures/Jasser/Back.jpg" width="100" height="100">
+<img src="" width="100" height="100">
 
 ## Links
 
