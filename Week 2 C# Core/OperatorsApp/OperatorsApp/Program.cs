@@ -4,7 +4,7 @@
     {
         static void Main(string[] args)
         {
-            int x = 5;
+            /*int x = 5;
             int y = 5;
             x++;
             ++y;
@@ -31,15 +31,35 @@
             var oddOrEven = g % 2;
 
             Console.WriteLine(EvenOdd(5));
-
+           
             Console.WriteLine("Pounds: " + GetPounds(156));
-            Console.WriteLine("Stones: " + GetStones(156));
+            Console.WriteLine("Stones: " + GetStones(156));*/
 
-            int j = 5; int k = 3; int m = 4;
-            m += +j++ + ++k;
+
+
+            bool isWearingParachute = false;
+            bool nerves = true;
+            if (isWearingParachute || nerves)
+            {
+                Console.WriteLine("Congratulations, you have made a successful jump!");
+            }
+
+            string greeting = null;
+            if (greeting != null & greeting.ToLower().StartsWith('a'))
+            {
+                Console.WriteLine(greeting + " starts with 'a'");
+            }
+
 
         }
-        public static bool EvenOdd(int num)
+
+        private static bool JumpOutOfAirplane()
+        {
+            throw new NotImplementedException();
+        }
+
+
+        /*public static bool EvenOdd(int num)
         {
             return num % 2 == 0;
         }
@@ -53,7 +73,7 @@
         public static int GetPounds(int totalStones)
         {
             return totalStones / 14;
-        }
+        }*/
     }
 }
 
