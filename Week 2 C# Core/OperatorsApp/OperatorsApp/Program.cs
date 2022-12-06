@@ -4,7 +4,7 @@
     {
         static void Main(string[] args)
         {
-            /*int x = 5;
+            int x = 5;
             int y = 5;
             x++;
             ++y;
@@ -31,9 +31,9 @@
             var oddOrEven = g % 2;
 
             Console.WriteLine(EvenOdd(5));
-           
+
             Console.WriteLine("Pounds: " + GetPounds(156));
-            Console.WriteLine("Stones: " + GetStones(156));*/
+            Console.WriteLine("Stones: " + GetStones(156));
 
 
 
@@ -59,7 +59,7 @@
         }
 
 
-        /*public static bool EvenOdd(int num)
+        public static bool EvenOdd(int num)
         {
             return num % 2 == 0;
         }
@@ -73,7 +73,7 @@
         public static int GetPounds(int totalStones)
         {
             return totalStones / 14;
-        }*/
+        }
     }
 }
 

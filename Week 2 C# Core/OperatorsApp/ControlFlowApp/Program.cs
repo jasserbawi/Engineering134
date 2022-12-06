@@ -30,5 +30,17 @@
             }
             return priority;
         }
+
+        public static bool CanDrive(int age)
+        {
+            switch(age)
+            {
+                case (age >= 17):
+                    return true;
+                default:
+                    return false;
+
+            }
+        }
     }
 }
