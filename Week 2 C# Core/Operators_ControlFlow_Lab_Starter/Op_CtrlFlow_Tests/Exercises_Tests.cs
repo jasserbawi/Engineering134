@@ -5,9 +5,22 @@ using System.Collections.Generic;
 namespace Op_CtrlFlow_Tests
 {
     public class Exercises_Tests
-    {     
+    {
         // write unit test(s) for MyMethod here
+        [TestCase(2, 2)]
+        [TestCase(3, 2)]
+        public void WhenEqual_ReturnFalse(int num1, int num2)
+        {
+            bool output = Exercises.MyMethod(num1, num2);
+            Assert.That(output, Is.EqualTo(false));
+        }
 
+        [TestCase(4, 2)]
+        public void WhenEqual_ReturnTrue(int num1, int num2)
+        {
+            bool output = Exercises.MyMethod(num1, num2);
+            Assert.That(output, Is.EqualTo(true));
+        }
 
         [Test]
         public void Average_ReturnsCorrectAverage()
