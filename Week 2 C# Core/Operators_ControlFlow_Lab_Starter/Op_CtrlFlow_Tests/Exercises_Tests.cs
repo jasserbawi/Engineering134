@@ -51,5 +51,76 @@ namespace Op_CtrlFlow_Tests
             var result = Exercises.TicketType(age);
             Assert.That(result, Is.EqualTo(expected));
         }
+
+        [TestCase(39)]
+        [TestCase(25)]
+        [TestCase(0)]
+        public void WhenGradeIsLessThan40_ReturnsFail(int mark)
+        {
+            string output = Exercises.Grade(mark);
+            Assert.That(output, Is.EqualTo("Fail"));
+        }
+
+        [TestCase(59)]
+        [TestCase(49)]
+        [TestCase(40)]
+        public void WhenGradeLessThan60GreaterThan39_ReturnsPass(int mark)
+        {
+            string output = Exercises.Grade(mark);
+            Assert.That(output, Is.EqualTo("Pass"));
+        }
+
+        [TestCase(74)]
+        [TestCase(67)]
+        [TestCase(60)]
+        public void WhenGradeLessThan75GreaterThan59_ReturnsPass(int mark)
+        {
+            string output = Exercises.Grade(mark);
+            Assert.That(output, Is.EqualTo("Pass with Merit"));
+        }
+
+        [TestCase(75)]
+        [TestCase(85)]
+        [TestCase(100)]
+        public void WhenGradeGreaterThan74_ReturnsPass(int mark)
+        {
+            string output = Exercises.Grade(mark);
+            Assert.That(output, Is.EqualTo("Pass with Distinction"));
+        }
+
+        [TestCase(0)]
+        public void WhenCovidLevel0_Returns200(int covidLevel)
+        {
+            int output = Exercises.GetScottishMaxWeddingNumbers(covidLevel);
+            Assert.That(output, Is.EqualTo(200));
+        }
+
+        [TestCase(1)]
+        public void WhenCovidLevel1_Returns100(int covidLevel)
+        {
+            int output = Exercises.GetScottishMaxWeddingNumbers(covidLevel);
+            Assert.That(output, Is.EqualTo(100));
+        }
+        
+        [TestCase(2)]
+        public void WhenCovidLevel2_Returns50(int covidLevel)
+        {
+            int output = Exercises.GetScottishMaxWeddingNumbers(covidLevel);
+            Assert.That(output, Is.EqualTo(50));
+        }
+        
+        [TestCase(3)]
+        public void WhenCovidLevel3_Returns50(int covidLevel)
+        {
+            int output = Exercises.GetScottishMaxWeddingNumbers(covidLevel);
+            Assert.That(output, Is.EqualTo(50));
+        }
+        
+        [TestCase(4)]
+        public void WhenCovidLevel4_Returns20(int covidLevel)
+        {
+            int output = Exercises.GetScottishMaxWeddingNumbers(covidLevel);
+            Assert.That(output, Is.EqualTo(20));
+        }
     }
 }
