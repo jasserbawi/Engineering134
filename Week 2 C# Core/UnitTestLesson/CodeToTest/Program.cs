@@ -9,20 +9,22 @@
             
         }
 
-        private static string GetGreeting(int timeOfDay)
+        public static string GetGreeting(int timeOfDay)
         {
             string message;
-            if (timeOfDay >= 5 && timeOfDay <= 12)
+            //0 to 5
+            if (timeOfDay >= 5 && timeOfDay < 12)
             {
-                message = "Good morning!";
+                message = "Good Morning!";
             }
             else if (timeOfDay >= 12 && timeOfDay <= 18)
             {
-                message = "Good afternoon!";
+                message = "Good Afternoon!";
             }
             else
+            //19 to 23
             {
-                message = "Good evening!";
+                message = "Good Evening!";
             }
             
             return message;
