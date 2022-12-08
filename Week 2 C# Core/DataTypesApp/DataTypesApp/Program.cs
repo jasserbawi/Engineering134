@@ -88,10 +88,34 @@ public class Program
         }
 
 
-        // UNSAFE CONVERSIONS (CASTING OPERATOR)
+
+        Console.WriteLine("___________________________________________________________________________________");
+        Console.WriteLine("  ");
+        Console.WriteLine("  ");
+
+
+
+        // UNSAFE CONVERSIONS USING CASTING (CASTING OPERATOR)
 
         int trees = 5000;
         short greenery = (short)trees;  // the (short) is a casting operator which forces unsafe conversions to take place
+
+
+        double pi = 3.14159265359;
+        float piFloat = (float)pi;
+        Console.WriteLine(pi);
+        Console.WriteLine(piFloat); // this will cut off and get you 3.1415927 instead
+
+        int bankBalance = -2;
+        uint postCovidBalance = (uint)bankBalance;
+        Console.WriteLine(postCovidBalance); // this will force bankBalance to become a larger value being uint which is large
+        Console.WriteLine(Convert.ToString(postCovidBalance, 2)); // this shows the binary numbers of the postCovidBalance value
+
+
+        string five = "5"; // this string holds "5" which is then converted using Convert.ToInt32(variable)
+        var numberFive = Convert.ToInt32(five);
+        Console.WriteLine(numberFive); // outputs 5 as an integer even though it was a string before
+
 
     }
 
