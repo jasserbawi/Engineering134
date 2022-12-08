@@ -7,7 +7,7 @@ namespace CodeToTest
         static void Main(string[] args)
         {
             int timeOfDay = 177;
-            int age = 11;
+            int age = -5;
 
             Console.WriteLine(AvailableClassifications(age));
             Console.WriteLine(GetGreeting(timeOfDay));
@@ -18,9 +18,9 @@ namespace CodeToTest
         {
             string message;
 
-            if (timeOfDay < 0 || timeOfDay > 100)
+            if (timeOfDay < 0 || timeOfDay > 23)
             {
-                throw new ArgumentOutOfRangeException("Mark cannot be out of the range 0-23");
+                throw new ArgumentOutOfRangeException("Greeting cannot be out of the range 0-23");
             }
 
             //0 to 5
@@ -43,6 +43,11 @@ namespace CodeToTest
 
         public static string AvailableClassifications(int ageOfViewer)
         {
+            if (ageOfViewer < 0)
+            {
+                throw new ArgumentOutOfRangeException("Age of the viewer cannot be negative (< 0).");
+            }
+
             string result;
             if (ageOfViewer < 12)
             {
