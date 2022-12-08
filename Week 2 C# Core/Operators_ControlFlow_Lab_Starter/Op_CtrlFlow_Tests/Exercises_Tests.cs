@@ -1,6 +1,8 @@
 ﻿using NUnit.Framework;
 using Op_CtrlFlow;
+using System;
 using System.Collections.Generic;
+using System.Reflection;
 
 namespace Op_CtrlFlow_Tests
 {
@@ -121,6 +123,35 @@ namespace Op_CtrlFlow_Tests
         {
             int output = Exercises.GetScottishMaxWeddingNumbers(covidLevel);
             Assert.That(output, Is.EqualTo(20));
+        }
+
+        [TestCase(5)]
+        [TestCase(-1)]
+        public void WhenCovidLevelIsOutOfRange_ReturnsException(int covidLevel)
+        {
+            Assert.That(() => Exercises.GetScottishMaxWeddingNumbers(covidLevel), Throws.TypeOf<ArgumentOutOfRangeException>().With.Message.Contain("There isnt a negative covid level or any level higher than 4."));
+        }
+
+        [TestCase(-1)]
+        [TestCase(-100)]
+        [TestCase(101)]
+        [TestCase(200)]
+        public void WhenGradeIsOutOfRange_ReturnsException(int mark)
+        {
+            Assert.That(() => Exercises.Grade(mark), Throws.TypeOf<ArgumentOutOfRangeException>().With.Message.Contain("You can't have a mark less than 0 or greater than 100."));
+        }
+
+        [TestCase(-1)]
+        [TestCase(-100)]
+        public void WhenAgeIsOutOfRange_ReturnsException(int age)
+        {
+            Assert.That(() => Exercises.TicketType(age), Throws.TypeOf<ArgumentOutOfRangeException>().With.Message.Contain("You cannot be less than zero years old."));
+        }
+
+        [TestCase(0)]
+        public void WhenAverageIsZero_ReturnsException(List<int> nums)
+        {
+            Assert.That(() => Exercises.Average(nums), Throws.TypeOf<ArgumentOutOfRangeException>().With.Message.Contain("The list is empty."));
         }
     }
 }
