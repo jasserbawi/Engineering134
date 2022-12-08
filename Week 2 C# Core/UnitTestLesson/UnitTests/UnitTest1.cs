@@ -2,7 +2,7 @@ using CodeToTest;
 
 namespace UnitTests
 {
-    /*public class Tests
+    public class Tests
     {
         [Test]
         public void GivenTimeOf21_GetGreeting_ReturnsGoodEvening()
@@ -94,7 +94,7 @@ namespace UnitTests
             //Assert that it returned "Good Evening!"
             Assert.That(output, Is.EqualTo("Good Evening!"));
         }
-    }*/
+    }
     public class Classification_Tests
     {
         [TestCase(0)]

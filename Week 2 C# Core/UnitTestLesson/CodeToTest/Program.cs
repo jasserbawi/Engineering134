@@ -6,19 +6,23 @@ namespace CodeToTest
     {
         static void Main(string[] args)
         {
-            int timeOfDay = 21;
+            int timeOfDay = 177;
             int age = 11;
 
-            /*Console.WriteLine(GetGreeting(timeOfDay));*/
-
-
             Console.WriteLine(AvailableClassifications(age));
+            Console.WriteLine(GetGreeting(timeOfDay));
 
         }
 
-        /*public static string GetGreeting(int timeOfDay)
+        public static string GetGreeting(int timeOfDay)
         {
             string message;
+
+            if (timeOfDay < 0 || timeOfDay > 100)
+            {
+                throw new ArgumentOutOfRangeException("Mark cannot be out of the range 0-23");
+            }
+
             //0 to 5
             if (timeOfDay >= 5 && timeOfDay < 12)
             {
@@ -33,9 +37,9 @@ namespace CodeToTest
             {
                 message = "Good Evening!";
             }
-            
+
             return message;
-        }*/
+        }
 
         public static string AvailableClassifications(int ageOfViewer)
         {
