@@ -32,8 +32,8 @@
 
             Console.WriteLine(EvenOdd(5));
 
-            Console.WriteLine("Pounds: " + GetPounds(156));
-            Console.WriteLine("Stones: " + GetStones(156));
+            Console.WriteLine("Pounds: " + GetPounds(-5));
+            Console.WriteLine("Stones: " + GetStones(-5));
 
 
 
@@ -43,14 +43,6 @@
             {
                 Console.WriteLine("Congratulations, you have made a successful jump!");
             }
-
-            string greeting = null;
-            if (greeting != null & greeting.ToLower().StartsWith('a'))
-            {
-                Console.WriteLine(greeting + " starts with 'a'");
-            }
-
-
         }
 
         private static bool JumpOutOfAirplane()
@@ -66,12 +58,22 @@
 
         public static int GetStones(int totalPounds)
         {
+            if (totalPounds < 0)
+            {
+                throw new ArgumentOutOfRangeException("You cannot have negative weight.");
+            }
+
             return totalPounds % 14;
         }
 
 
         public static int GetPounds(int totalStones)
         {
+            if (totalStones < 0)
+            {
+                throw new ArgumentOutOfRangeException("You cannot have negative weight.");
+            }
+
             return totalStones / 14;
         }
     }
