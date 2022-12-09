@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31019.35
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33122.133
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MoreTypes_Lib", "MoreTypes_Lib\MoreTypes_Lib.csproj", "{A474CB03-3FA3-45DE-BA43-B3BD63FB3573}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MoreTypes_Tests", "MoreTypes_Tests\MoreTypes_Tests.csproj", "{CF5F9F89-CAD6-4B34-969C-2C1926E531D6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reference Lesson", "Reference Lesson\Reference Lesson.csproj", "{D9BC4583-73DD-4AD1-BBC0-5CF16B350012}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{CF5F9F89-CAD6-4B34-969C-2C1926E531D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CF5F9F89-CAD6-4B34-969C-2C1926E531D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CF5F9F89-CAD6-4B34-969C-2C1926E531D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D9BC4583-73DD-4AD1-BBC0-5CF16B350012}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9BC4583-73DD-4AD1-BBC0-5CF16B350012}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9BC4583-73DD-4AD1-BBC0-5CF16B350012}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9BC4583-73DD-4AD1-BBC0-5CF16B350012}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
