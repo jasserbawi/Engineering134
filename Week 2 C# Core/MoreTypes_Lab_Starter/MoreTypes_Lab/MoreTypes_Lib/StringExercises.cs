@@ -28,7 +28,11 @@ namespace MoreTypes_Lib
         // returns a string representing a test score, written as percentage to 1 decimal place
         public static string Scorer(int score, int outOf)
         {
-            return $"You got {score} out of {outOf}: {100*Math.Round((Convert.ToDouble(score) / Convert.ToDouble(outOf)), 1)}%";
+            var percent = ((double)score / outOf) * 100;
+            return $"You got {score} out of {outOf}: {Math.Round(percent, 1)}%";
+
+            /*return $"You got {score} out of {outOf}: {100*Math.Round((Convert.ToDouble(score) / Convert.ToDouble(outOf)), 1)}%";*/
+
             throw new NotImplementedException();
         }
 
@@ -50,7 +54,6 @@ namespace MoreTypes_Lib
         // all other letters are ignored
         public static string CountLetters(string input)
         {
-
             int A = 0;
             int B = 0;
             int C = 0;
@@ -58,7 +61,7 @@ namespace MoreTypes_Lib
 
             if (input.Length > 0)
             {
-                foreach (char c in input)
+                foreach(char c in input)
                 {
                     if (c == 'A')
                     {
@@ -67,11 +70,11 @@ namespace MoreTypes_Lib
                     else if (c == 'B')
                     {
                         B++;
-                    }
+                    }             
                     else if (c == 'C')
                     {
                         C++;
-                    }
+                    }               
                     else if (c == 'D')
                     {
                         D++;
@@ -81,8 +84,10 @@ namespace MoreTypes_Lib
             }
             else
             {
-                throw new NotImplementedException();
+                return $"A:0 B:0 C:0 D:0";
             }
+
+            
         }
     }
 }
