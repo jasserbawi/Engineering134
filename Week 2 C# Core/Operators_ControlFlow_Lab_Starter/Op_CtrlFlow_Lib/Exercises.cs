@@ -9,7 +9,7 @@ namespace Op_CtrlFlow
     {
         public static bool MyMethod(int num1, int num2)
         {
-            return num1 == num2 ? false : (num1 % num2) == 0;
+            return num1 == num2 ? false : num1 % num2 == 0;
         }
         //if num1 equals num2, then we return false
         //if num1 does not equal num2, then we check the modulus of num1 and num2 and if it is zero then return true otherwise false

@@ -15,6 +15,10 @@ internal class Program
         MultiDArrays();
 
         JaggedArrays();
+
+        DateTimeMethods();
+
+        Enums();
     }
 
     public static string StringExercise(string myString)
@@ -92,13 +96,13 @@ internal class Program
             Console.WriteLine(element);
         }
 
-        for (int i = gridTwo.GetLowerBound(0); i <= gridTwo.GetUpperBound(0); i++)
+/*        for (int i = gridTwo.GetLowerBound(0); i <= gridTwo.GetUpperBound(0); i++)
         {
             for (int j= gridTwo.GetLowerBound(1); j <= gridTwo.GetUpperBound(1); i++)
-            {
-                /*Console.WriteLine($"({i}, {j}) {gridTwo[i, j]} ");*/
+            {                                                                                                       //      this messes everything up
+                Console.WriteLine($"({i}, {j}) {gridTwo[i, j]} ");     
             }
-        }
+        }*/
 
     }
     public static void JaggedArrays()
@@ -115,5 +119,49 @@ internal class Program
             new string[] {"Hyena", "Lion", "Cheetah", "Panther"},
             new string[] { "Peacock", "Canary" },
         };
+
+        Console.WriteLine("Jagged array of animals");
+        foreach (var element in animalJArray)
+        {
+            foreach (var animal in element)
+            {
+                Console.WriteLine(animal);
+            }
+        }
+    }
+    public static void DateTimeMethods()
+    {
+        var now = DateTime.Now;
+        Console.WriteLine($"Then time now is {now}");
+        Console.WriteLine($"The time in ticks is {now.Ticks}");
+        var tomorrow = now.AddDays(1);
+        Console.WriteLine($"Tomorrow it will be {tomorrow} which is {tomorrow.Ticks}");
+    }
+
+    public static void Enums()
+    {
+        Suit theSuit = Suit.HEARTS;
+        if(theSuit == Suit.SPADES)
+        {
+            Console.WriteLine($"Suit is {Suit.SPADES}");
+        }
+        else
+        {
+            Console.WriteLine($"the suit is {theSuit} not {Suit.SPADES}");
+        }
+        var anotherSuit = Enum.Parse(typeof(Suit), "CLUBS");
+
+        var mediumValue = (int)Size.MEDIUM;    // enums are a 2 faced mix mapping where you can as for the value that a name has been assigned and it will give the name or call the name and it will give the value
+        var mySize = (Size)50;
+    }
+
+public enum Suit
+    {
+        HEARTS, CLUBS, DIAMONDS, SPADES
+    }   
+
+public enum Size
+    {
+        SMALL = 10, LARGE = 50, MEDIUM = 25
     }
 }

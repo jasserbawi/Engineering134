@@ -15,6 +15,7 @@
             Console.WriteLine("Highest for- loop: " + LoopTypes.HighestForLoop(nums));
             Console.WriteLine("Highest while- loop: " + LoopTypes.HighestWhileLoop(nums));
             Console.WriteLine("Highest do-while loop: " + LoopTypes.HighestDoWhileLoop(nums));
+            Console.WriteLine("TESTER: " + LoopTypes.forEach(nums));
         }
 
 /*        public static string Priority(int level)

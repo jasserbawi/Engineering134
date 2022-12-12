@@ -64,5 +64,21 @@ namespace ControlFlowApp
             }
             return highest;
         }
+
+        internal static int forEach(List<int> nums)
+        {
+            int i = 0;
+            var highest = nums[0];
+            while (i < nums.Count)
+            {
+                if (nums[i] > highest)
+                {
+                    highest = nums[i];
+                }
+                i++;
+            }
+            return highest;
+        }
+
     }
 }
