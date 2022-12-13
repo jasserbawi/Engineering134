@@ -76,7 +76,7 @@ namespace AdvancedNUnit
         public void ArrayChecker2()
         {
             int[] arraytest = new int[99];
-            Assert.That(arraytest, Has.Exactly(99).Items);
+            Assert.That(arraytest, Has.Exactly(99).Items); // or Has.Length.EqualTo(99) for arrays and change Length to Count for list
         }
 
     }
