@@ -5,7 +5,7 @@ internal class Program
 {
     static void Main(string[] args)
     {
-        CheatSheet();
+        Console.WriteLine(CheatSheet());
     }
 
     public static (int firstScore, int secondScore) CheatSheet()
@@ -13,11 +13,6 @@ internal class Program
         var input = File.ReadAllText("C:/Users/Jasser/Desktop/SpartaGlobal/Engineering134/Week 3/AdventOfCode/Day2.txt");
         
         List<char> opponentsAnswers = new List<char>();
-
-        foreach(char a in opponentsAnswers)
-        {
-            Console.WriteLine(a);
-        }
 
         List<char> myAnswers = new List<char>();
 
@@ -31,9 +26,12 @@ internal class Program
             myAnswers.Add(input[i]);
         }
 
+        //  A ROCK    B PAPER    C SCISSORS
+        //  X ROCK (1)    Y PAPER (2)    Z SCISSORS (3)
+        //  WIN = 6   DRAW = 3    LOSS = 0
 
         // The points given for all possibilities against opponents ROCK
-        IDictionary<char, int> myAnswerAgainstRock = new Dictionary<char, int>()
+        var myAnswerAgainstRock = new Dictionary<char, int>()
         {
             {'X', 4},
             {'Y', 8},
@@ -41,7 +39,7 @@ internal class Program
         };
 
         // The points given for all possibilities against opponents PAPER
-        IDictionary<char, int> myAnswerAgainstPaper = new Dictionary<char, int>()
+        var myAnswerAgainstPaper = new Dictionary<char, int>()
         {
             {'X', 1},
             {'Y', 5},
@@ -49,16 +47,12 @@ internal class Program
         };
 
         // The points given for all possibilities against opponents SCISSORS
-        IDictionary<char, int> myAnswerAgainstScissors = new Dictionary<char, int>()
+        var myAnswerAgainstScissors = new Dictionary<char, int>()
         {
             {'X', 7},
             {'Y', 2},
             {'Z', 6}
         };
-
-        //  A ROCK    B PAPER    C SCISSORS
-        //  X ROCK (1)    Y PAPER (2)    Z SCISSORS (3)
-        //  WIN = 6   DRAW = 3    LOSS = 0
 
         int firstScore = 0;
         for (int i = 0; i < myAnswers.Count; i++)
@@ -77,7 +71,7 @@ internal class Program
             }
         }
 
-        // NEW against opponents ROCK
+        // NEW points going against opponents ROCK
         IDictionary<char, int> newAnswerAgainstRock = new Dictionary<char, int>()
         {
             {'X', 3},
@@ -85,7 +79,7 @@ internal class Program
             {'Z', 8}
         };
 
-        // NEW against opponents PAPER
+        // NEW points going against opponents PAPER
         IDictionary<char, int> newAnswerAgainstPaper = new Dictionary<char, int>()
         {
             {'X', 1},
@@ -93,7 +87,7 @@ internal class Program
             {'Z', 9}
         };
 
-        // NEW against opponents SCISSORS
+        // NEW points going against opponents SCISSORS
         IDictionary<char, int> newAnswerAgainstScissors = new Dictionary<char, int>()
         {
             {'X', 2},
