@@ -6,10 +6,8 @@ public class Program
 {   
     static void Main(string[] args)
     {
-
+        Console.WriteLine(FizzBuzz(30));
     }
-
-
 
     // argument is the value passed in when a method is called
 
@@ -18,7 +16,11 @@ public class Program
         string outputString = "";
         for (int i = 1; i <= maxValue; i++)
         {
-            if (i % 3 == 0)
+            if (i % 3 == 0 && i % 5 == 0)
+            {
+                outputString += "FizzBuzz ";
+            }
+            else if (i % 3 == 0)
             {
                 outputString += "Fizz ";
             }
