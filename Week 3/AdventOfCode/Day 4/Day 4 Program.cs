@@ -68,6 +68,7 @@ internal class Program
             {
                 ContainedAndOverlappingPairs++;
             }
+
         }
 
         return $"Contained only: {ContainedPairs}, Both: {ContainedAndOverlappingPairs}";

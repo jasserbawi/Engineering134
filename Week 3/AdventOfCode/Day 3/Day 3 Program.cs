@@ -21,8 +21,8 @@ internal class Program
 
         foreach(string rucksack in AllRucksacks)
         {
-            var FirstRuckSackCompartment = rucksack.Substring(0, (int)rucksack.Length / 2);
-            var SecondRuckSackCompartment = rucksack.Substring((int)rucksack.Length / 2);
+            var FirstRuckSackCompartment = rucksack.Substring(0, rucksack.Length / 2);
+            var SecondRuckSackCompartment = rucksack.Substring(rucksack.Length / 2);
             Compartment1.Add(FirstRuckSackCompartment);
             Compartment2.Add(SecondRuckSackCompartment);
         }
@@ -70,11 +70,12 @@ internal class Program
         {
             for (int i = 0; i < AllRucksacks[Rucksack+1].Length; i++)
             {
-                if (AllRucksacks[Rucksack].Contains(AllRucksacks[Rucksack+1][i]))
+                var item = AllRucksacks[Rucksack+1][i];
+                if (AllRucksacks[Rucksack].Contains(item))
                 {
-                    if (AllRucksacks[Rucksack + 2].Contains(AllRucksacks[Rucksack+1][i]))
+                    if (AllRucksacks[Rucksack + 2].Contains(item))
                     {
-                        var RepeatedItem = AllRucksacks[Rucksack + 1][i];
+                        var RepeatedItem = item;
                         var RepeatedItemPriorityScore = PriorityScores[RepeatedItem];
 
                         GroupRepeatedItemList.Add(RepeatedItem);
@@ -84,6 +85,8 @@ internal class Program
                 }
             }
         }
+
+        GroupRepeatedItemPriorityList.Average();
 
         return $"The individual Rucksack total: {RepeatedItemPriorityScoreList.Sum()} and grouped Rucksack total: {GroupRepeatedItemPriorityList.Sum()}";
     }
