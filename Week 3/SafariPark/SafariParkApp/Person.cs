@@ -8,10 +8,33 @@ namespace SafariParkApp
     public class Person
     {
         //fields
-        private string _firstName = "";
-        private string _lastName = "";
+        private string _firstName = ""; //This is a backing field
+        private string _lastName = ""; //This is a backing field
+        private readonly string _eyeColour = "";
 
         //property
+        public string FirstName //Initialisation
+        {
+            get
+            {
+                return _firstName;
+            }
+            init
+            {
+                _firstName = value;
+            }
+        }
+        public string LastName //Initialisation
+        {
+            get
+            {
+                return _lastName;
+            }
+            init
+            {
+                _lastName = value;
+            }
+        }
         public int Age { get; set; } = 18;
 
         // backing field
@@ -42,7 +65,7 @@ namespace SafariParkApp
         } 
 
         //method
-        public string FullName()
+        public virtual string FullName()
         {
             return _firstName + " " + _lastName;
         }
@@ -61,11 +84,17 @@ namespace SafariParkApp
         {
             _firstName = firstName;
             _lastName = lastName;
+            _eyeColour = "brown";
         }
 
         public Person()
         {
 
+        }
+
+        public override string ToString() // Override which allows us to use the base keyword
+        {
+            return $"{base.ToString()} {FirstName} {LastName} {_eyeColour} eyes"; // This refers to the ToString underneath which is a method made by the object class (hidden class which every class we create inherits)
         }
     }
 }
