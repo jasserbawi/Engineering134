@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿namespace SafariParkApp;
 
-namespace SafariParkApp;
-
-public class Vehicle
+public class Vehicle : IMoveable
 {
     private int _capacity;
     private int _numPassengers;
@@ -52,7 +47,7 @@ public class Vehicle
 
     public override string ToString()
     {
-        return base.ToString() + $"Passengers: {NumPassengers} capacity {_capacity}";
+        return base.ToString() + $" Passengers: {NumPassengers} capacity {_capacity}";
     }
 
 }

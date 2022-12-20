@@ -28,19 +28,18 @@ public class Program
 
                 DoThis(scot, p);*/
 
-        Hunter nish = new Hunter("Nish", "Mandal", "Nikon") { Age = 31 };
-        nish.Age = 31;
+        /*Hunter nish = new Hunter("Nish", "Mandal", "Nikon") { Age = 31 };*/
+        // nish.Age = 31;
         /*Console.WriteLine(nish.Shoot());*/
 
-        Person jasser = new Person("Jasser", "Bawi");
+        /*Person jasser = new Person("Jasser", "Bawi");
         Person jassersTwin = new Person("Jasser", "Bawi");
 
-        /*Console.WriteLine(jasser.Equals(jassersTwin)); // these are 2 different objects
+        Console.WriteLine(jasser.Equals(jassersTwin)); // these are 2 different objects
         Console.WriteLine(jasser.GetType());
 
-        Console.WriteLine(jasser); // we use our created ToString method
+        Console.WriteLine(jasser); // we use our created ToString method*/
 
-        Console.WriteLine(nish);*/
 
         Cat Cat = new Cat();
         /*Console.WriteLine(Cat.Call());
@@ -61,19 +60,98 @@ public class Program
         plane2.Descend(5);
         plane2.ToString();*/
 
-        List<Object> safariObjects = new()
+        /*        List<Object> safariObjects = new()
+                {
+                    jasser,
+                    jassersTwin,
+                    Cat,
+                    new Vehicle(12, 100) {NumPassengers = 6},
+                };*/
+
+        /*foreach(IMoveable obj in safariObjects)
         {
-            jasser,
-            jassersTwin,
-            Cat,
-            nish,
-            new Vehicle(12, 100) {NumPassengers = 6}
+            SpartaWrite(obj);
+        }*/
+
+        /*IMoveable mover = jasser;*/
+
+        /*Console.WriteLine(mover.Move());
+
+        mover = nish;
+
+        Console.WriteLine(mover.Move());
+
+        mover = new Airplane(25);
+
+        Console.WriteLine(mover.Move());*/
+
+
+        Console.WriteLine("Polymorphic shootout");
+
+        Camera pentax = new Camera("Pentax");
+
+        WaterPistol pistol = new WaterPistol("Supersoaker");
+        LaserGun laserGun = new LaserGun("Acme");
+
+        Hunter nish = new Hunter("Nish", "Mandal", pentax);
+
+        Console.WriteLine(nish.Shoot());
+
+        nish.Shooter = pistol;
+        Console.WriteLine(nish.Shoot());
+
+        nish.Shooter = laserGun;
+        Console.WriteLine(nish.Shoot());
+
+        nish.Shooter = pistol;
+        Console.WriteLine(nish.Shoot());
+
+
+
+        List<IShootable> weapons = new()
+        {
+            new WaterPistol("WaterRifle"),
+            new LaserGun("LaserRifle"),
+            new WaterPistol("LaserPistol"),
+            new Hunter("Nish", "Mandel", pentax),
+            new Hunter("John", "Smith", pentax),
+            new Camera("Nikon")
         };
 
-        foreach(var obj in safariObjects)
+/*        foreach(IShootable obj in weapons)
         {
-            Console.WriteLine(obj);
+            Shooter(obj);
+        }*/
+    }
+
+    private static void Shooter(IShootable shootable)
+    {
+        if (shootable is Weapon) // "is" is an operator ---> this if statement is important so that the object can be casted to a person underneath
+        {
+            var shooter = (Weapon)shootable; // if the object is a person (casted using () ) then print the person fullname.
+            Console.WriteLine(shootable.Shoot());
         }
+        else if (shootable is Hunter)
+        {
+            var shooter = (Hunter)shootable; // if the object is a person (casted using () ) then print the person fullname.
+            Console.WriteLine(shootable.Shoot());
+        }
+        else if (shootable is Camera)
+        {
+            var shooter = (Camera)shootable; // if the object is a person (casted using () ) then print the person fullname.
+            Console.WriteLine(shootable.Shoot());
+        }
+    }
+
+    private static void SpartaWrite(IMoveable moveable)
+    {
+        if (moveable is Person) // "is" is an operator ---> this if statement is important so that the object can be casted to a person underneath
+        {
+            var person = (Person)moveable; // if the object is a person (casted using () ) then print the person fullname.
+            Console.WriteLine(person.FullName());
+        }
+        Console.WriteLine(moveable.Move());
+        Console.WriteLine(moveable.Move(2));
     }
 
     public static void DoThis(Person person, Point3D point)

@@ -5,14 +5,18 @@ using System.Text;
 
 namespace SafariParkApp
 {
-    public class Person
+    public class Person : IMoveable
     {
         //fields
         private string _firstName = ""; //This is a backing field
         private string _lastName = ""; //This is a backing field
         private readonly string _eyeColour = "";
 
+
         //property
+        public int Position { get; set; }
+        public int Speed { get; init; }
+
         public string FirstName //Initialisation
         {
             get
@@ -24,6 +28,7 @@ namespace SafariParkApp
                 _firstName = value;
             }
         }
+
         public string LastName //Initialisation
         {
             get
@@ -94,7 +99,19 @@ namespace SafariParkApp
 
         public override string ToString() // Override which allows us to use the base keyword
         {
-            return $"{base.ToString()} {FirstName} {LastName} {_eyeColour} eyes"; // This refers to the ToString underneath which is a method made by the object class (hidden class which every class we create inherits)
+            return $"{FirstName} {LastName}"; // This refers to the ToString underneath which is a method made by the object class (hidden class which every class we create inherits)
+        }
+
+        public string Move()
+        {
+            Position += Speed;
+            return "Moving along";
+        }
+
+        public string Move(int times)
+        {
+            Position += Speed * times;
+            return Move() + $" {times} times";
         }
     }
 }

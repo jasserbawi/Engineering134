@@ -1,6 +1,6 @@
 ﻿namespace SafariParkApp;
 
-public abstract class Animal // This is an abstract class
+public abstract class Animal : IMoveable // This is an abstract class
 {
     public string Name { get; set; }
 
@@ -10,6 +10,9 @@ public abstract class Animal // This is an abstract class
     }
 
     public abstract string Move(); // needs to be marked abstract, this has to be overriden in the specific animals
+
+    public abstract string Move(int times);
+
 
     public abstract int Legs();
 
@@ -25,6 +28,11 @@ public class Cat : Animal
     public override string Move()
     {
         return "Saunters";
+    }
+
+    public override string Move(int times)
+    {
+        return Move() + $" {times} times";
     }
 
     public override int Legs()
@@ -44,6 +52,11 @@ public class Dog : Animal
     public override string Move()
     {
         return "Trots";
+    }
+
+    public override string Move(int times)
+    {
+        return Move() + $" {times} times";
     }
 
     public override int Legs()

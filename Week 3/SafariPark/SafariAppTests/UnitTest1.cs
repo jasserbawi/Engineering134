@@ -2,7 +2,7 @@ using SafariParkApp;
 
 namespace SafariAppTests;
 
-[TestFixture]
+
 public class VehicleTests
 {
     [Test]
@@ -22,5 +22,41 @@ public class VehicleTests
         Assert.AreEqual(40, v.Position);
         Assert.AreEqual("Moving along", result);
 
+    }
+}
+
+public class Polymorphism
+{
+    [Test]
+    public void GivenCameraPentax_WhenNishMandelCreated_ReturnNishShootingPentax()
+    {
+        Camera cam = new Camera("Pentax");
+        Hunter nish = new Hunter("Nish", "Mandel", cam);
+
+        var result = nish.Shoot();
+
+        Assert.That(result, Is.EqualTo("Nish Mandel: Shooting a SafariParkApp.Camera - Pentax"));
+    }
+
+    [Test]
+    public void GivenWeaponSupersoaker_WhenNishMandelCreated_ReturnNishSplash()
+    {
+        WaterPistol pistol = new WaterPistol("Supersoaker");
+        Hunter nish = new Hunter("Nish", "Mandel", pistol);
+
+        var result = nish.Shoot();
+
+        Assert.That(result, Is.EqualTo("Nish Mandel: Splash!! Shooting a SafariParkApp.WaterPistol - Supersoaker"));
+    }
+
+    [Test]
+    public void GivenWeaponAcme_WhenNishMandelCreated_ReturnNishZing()
+    {
+        LaserGun laserGun = new LaserGun("Acme");
+        Hunter nish = new Hunter("Nish", "Mandel", laserGun);
+
+        var result = nish.Shoot();
+
+        Assert.That(result, Is.EqualTo("Nish Mandel: Zing!! Shooting a SafariParkApp.LaserGun - Acme"));
     }
 }

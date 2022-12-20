@@ -1,31 +1,25 @@
 ﻿namespace SafariParkApp;
 
-public class Hunter : Person
+public class Hunter : Person, IShootable
 {
-    //Fields
-    private string _camera;
+    public IShootable Shooter { get; set; }
 
     //Methods
     // Since _fistName is private and we want to access it, we do: public Hunter(...) : base(fName, lName)
-    public Hunter(string fName, string lName, string camera = "") : base(fName, lName)
+    public Hunter(string fName, string lName, IShootable shooter) : base(fName, lName)
     {
-        _camera = camera;
+        Shooter = shooter;
     }
 
     public Hunter() { }
 
     public string Shoot()
     {
-        return $"{FullName()} has taken a photo with their {_camera}";
+        return $"{base.ToString()}: {Shooter.Shoot()}";
     }
 
     public override string ToString()
     {
-        return $"{base.ToString()} and a {_camera} camera";
-    }
-
-    public override string FullName()
-    {
-        return "test";
+        return $"{base.ToString()} and a {Shooter} camera";
     }
 }
