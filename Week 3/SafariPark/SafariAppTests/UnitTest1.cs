@@ -2,6 +2,7 @@ using SafariParkApp;
 
 namespace SafariAppTests;
 
+[TestFixture]
 public class VehicleTests
 {
     [Test]
@@ -22,9 +23,4 @@ public class VehicleTests
         Assert.AreEqual("Moving along", result);
 
     }
-}
-
-public class PersonTests
-{
-
 }

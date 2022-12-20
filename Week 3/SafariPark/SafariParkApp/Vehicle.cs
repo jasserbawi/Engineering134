@@ -5,7 +5,7 @@ using System.Text;
 
 namespace SafariParkApp;
 
-public abstract class Vehicle
+public class Vehicle
 {
     private int _capacity;
     private int _numPassengers;
@@ -50,13 +50,34 @@ public abstract class Vehicle
         Speed = speed;
     }
 
+    public override string ToString()
+    {
+        return base.ToString() + $"Passengers: {NumPassengers} capacity {_capacity}";
+    }
+
 }
 
 public class Airplane : Vehicle
 {
     private string _airline;
 
-    public int Altitude { get; set; }
+    private int _altitude;
+
+    public int Altitude
+    {
+        get
+        {
+            return _altitude;
+        }
+        set
+        {
+            if (value >= 0 ) { _altitude = value; }
+            else
+            {
+                throw new ArgumentException("You crashed.");
+            }
+        }
+    }
 
     public void Ascend(int distance)
     {
@@ -92,15 +113,6 @@ public class Airplane : Vehicle
 
     public override string ToString()
     {
-        var PositionResult = "";
-        if (Altitude < 0)
-        {
-            PositionResult = "You have crashed and died.";
-        }
-        else
-        {
-            PositionResult = $"The {_airline} plane altitude has moved {Altitude} ";
-        }
-        return PositionResult;
+        return base.ToString() + $"The {_airline} plane has altitude {_altitude} and position {Position}";
     }
 }

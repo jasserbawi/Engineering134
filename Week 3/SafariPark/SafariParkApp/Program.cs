@@ -30,7 +30,7 @@ public class Program
 
         Hunter nish = new Hunter("Nish", "Mandal", "Nikon") { Age = 31 };
         nish.Age = 31;
-        Console.WriteLine(nish.Shoot());
+        /*Console.WriteLine(nish.Shoot());*/
 
         Person jasser = new Person("Jasser", "Bawi");
         Person jassersTwin = new Person("Jasser", "Bawi");
@@ -42,8 +42,8 @@ public class Program
 
         Console.WriteLine(nish);*/
 
-        /*Cat Cat = new Cat();
-        Console.WriteLine(Cat.Call());
+        Cat Cat = new Cat();
+        /*Console.WriteLine(Cat.Call());
         Console.WriteLine(Cat.Move());
         Console.WriteLine($"The animal has {Cat.Legs()} legs.");
 
@@ -52,16 +52,28 @@ public class Program
         Console.WriteLine(Dog.Move());
         Console.WriteLine($"The animal has {Dog.Legs()} legs.");*/
 
-        Airplane plane = new Airplane(20);
+        /*Airplane plane = new Airplane(20);
         Console.WriteLine(plane.Move());
         plane.Ascend(5);
 
         Airplane plane2 = new Airplane(50, 3, "EasyJet");
         Console.WriteLine(plane2.Move());
         plane2.Descend(5);
-        plane2.ToString();
+        plane2.ToString();*/
 
+        List<Object> safariObjects = new()
+        {
+            jasser,
+            jassersTwin,
+            Cat,
+            nish,
+            new Vehicle(12, 100) {NumPassengers = 6}
+        };
 
+        foreach(var obj in safariObjects)
+        {
+            Console.WriteLine(obj);
+        }
     }
 
     public static void DoThis(Person person, Point3D point)
