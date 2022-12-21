@@ -30,7 +30,7 @@ public class Program
 
         // Tuples as a return type
         var weight = ConvertPoundsToStonesAndPounds(156);
-        Console.WriteLine(weight.stones + "stones and " + weight.pounds + " pounds.");
+        Console.WriteLine(weight.stones + " stones and " + weight.pounds + " pounds.");
     }
 
     public static int DoThis(int x, string y = "happy")

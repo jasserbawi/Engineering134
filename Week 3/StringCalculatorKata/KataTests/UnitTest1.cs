@@ -11,7 +11,7 @@ public class Tests
 
         int expected = Program.Add(input);
 
-        Assert.AreEqual(0, expected);
+        Assert.That(0, Is.EqualTo(expected));
     }
 
     [Test]
@@ -21,7 +21,7 @@ public class Tests
 
         int expected = Program.Add(input);
 
-        Assert.AreEqual(1, expected);
+        Assert.That(1, Is.EqualTo(expected));
     }
 
     [Test]
@@ -31,7 +31,7 @@ public class Tests
 
         int expected = Program.Add(input);
 
-        Assert.AreEqual(3, expected);
+        Assert.That(3, Is.EqualTo(expected));
     }
 
     [Test]
@@ -41,7 +41,7 @@ public class Tests
 
         int expected = Program.Add(input);
 
-        Assert.AreEqual(55, expected);
+        Assert.That(55, Is.EqualTo(expected));
     }
 
     [Test]
@@ -51,6 +51,6 @@ public class Tests
 
         int expected = Program.Add(input);
 
-        Assert.AreEqual(6, expected);
+        Assert.That(6, Is.EqualTo(expected));
     }
 }

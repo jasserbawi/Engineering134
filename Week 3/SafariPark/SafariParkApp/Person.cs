@@ -113,5 +113,6 @@ namespace SafariParkApp
             Position += Speed * times;
             return Move() + $" {times} times";
         }
+
     }
 }
