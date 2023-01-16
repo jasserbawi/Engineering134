@@ -1,0 +1,8 @@
+---
+Restaurants:
+- name: McDonalds
+  location: London
+  rating: 4
+- name: Pizzahut
+  location: Birmingham
+  rating: 3
